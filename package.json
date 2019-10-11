@@ -1,0 +1,20 @@
+{
+  "name": "image-setup",
+  "version": "1.0.0",
+  "description": "image-setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blavity/-blavity-image-setup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blavity/-blavity-image-setup/issues"
+  },
+  "homepage": "https://github.com/blavity/-blavity-image-setup#readme"
+}
