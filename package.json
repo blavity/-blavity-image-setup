@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/blavity/-blavity-image-setup/issues"
+    "url": "https://github.com/blavity/blavity-image-setup/issues"
   },
-  "homepage": "https://github.com/blavity/-blavity-image-setup#readme",
+  "homepage": "https://github.com/blavity/blavity-image-setup#readme",
   "devDependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
