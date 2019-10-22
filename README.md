@@ -1,5 +1,45 @@
-image-setup
+# Blavity Image Setup
 ```javascript
+
+/*
+contains 4 functions
+
+    parseImage
+
+    removeEmpty
+
+    stringifyImageParams
+
+    setUpImage
+
+*/
+
+const {parseImage} = require('blavityImageSetup')
+
+parseImage('https://res.cloudinary.com/blavity/image/upload/w_640,h_250,c_fill,ar_16:9,g_center,z_1.0,x_0,y_0,q_100/v1571756481/f9f98ydergzgdb5odvkl')
+
+// returns object { w: '640', h : '250', c: 'fill', ar: '16:9', g:'center', z: '1.0', x: '0', y: '0', q: '100'}
+
+const {removeEmpty} = require('blavityImageSetup')
+
+// removes any key from an object that is null or undefined
+
+removeEmpty({x: 1 y: null})
+
+// returns object {x:1}
+
+const {stringifyImageParams} = require('blavityImageSetup')
+
+stringifyImageParams({
+  w: 640,
+  h: 250,
+  c: 'fill',
+  ar: '16:9',
+  g: 'center'
+})
+
+// returns => string "w_640,h_250,c_fill,ar_16:9,g_center"
+
 // w = width
 // h = height
 // c = crop
@@ -16,4 +56,26 @@ image-setup
   // 4 values: Each corner specified separately, in clockwise order, starting with top-left.
   //Or specify max to make the image a perfect circle or oval (ellipse).
 // a = angle Rotate or flip an image by the given degrees or automatically according to its orientation or available meta-data. Multiple modes can be applied by concatenating their names with a dot.
+
+// see cloudinary docs https://cloudinary.com/documentation/image_transformation_reference
+const {setUpImage} = require('blavityImageSetup')
+
+setUpImage({
+  imgSlug: 'v1571756481/f9f98ydergzgdb5odvkl',
+  mode : 'enhance',
+  options: {
+  h : '250'
+}})
+
+// => returns string https://res.cloudinary.com/blavity/image/upload/w_640,h_250,c_fill,ar_16:9,g_center,z_1.0,x_0,y_0,q_100/v1571756481/f9f98ydergzgdb5odvkl"
+
+setUpImage({imgSlug: 'v1571756481/f9f98ydergzgdb5odvkl', mode : 'custom', options: {
+  h : '250',
+  w:'300',
+  c:'crop',
+  g:'north_east'
+}})
+
+// => returns string"https://res.cloudinary.com/blavity/image/upload/h_250,w_300,c_crop,g_north_east/v1571756481/f9f98ydergzgdb5odvkl"
+
 ```
