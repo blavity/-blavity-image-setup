@@ -16,23 +16,23 @@ module.exports = {
 
 	    return obj
     },
-  stringifyImageParams: (queryObject) => {
-	   queryObject = removeEmpty(queryObject)
+  stringifyImageParams (queryObject) {
+	   queryObject = this.removeEmpty(queryObject)
 	    let queryString = ''
 	    for (let element of Object.keys(queryObject)) {
 		       queryString = `${queryString},${element}_${queryObject[element]}`
 	        }
 	    return queryString.substring(1)
     } ,
-    setUpImage ({imgSlug, org: 'blavity', mode, options}) {
+    setUpImage ({imgSlug, org = 'blavity', mode, options}) {
     if ( mode.trim().toLowerCase() === 'custom') {
-    const stringifiedOptions = stringifyImageParams(options)
+    const stringifiedOptions = this.stringifyImageParams(options)
     return `https://res.cloudinary.com/${org}/image/upload/${stringifiedOptions}/${imgSlug}`
   } else if (mode.trim().toLowerCase() === 'enhance') {
-    const { w = 'w_640',h = 'h_360',c='c_fill',ar='ar_16:9',g='g_center',z='z_1.0',x='x_0',y='y_0',q ='q_100',r,a } = parsedOptions
-    return (r && a) ? `https://res.cloudinary.com/${org}/image/upload/${w},${h},${c},${ar},${g},${z},${x},${y},${q},r_${r},a_${a}/${imgSlug}`:  r ? `https://res.cloudinary.com/${org}/image/upload/${w},${h},${c},${ar},${g},${z},${x},${y},${q},r_${r}/${imgSlug}`: a ? `https://res.cloudinary.com/${org}/image/upload/${w},${h},${c},${ar},${g},${z},${x},${y},${q},a_${a}/${imgSlug}`: `https://res.cloudinary.com/${org}/image/upload/${w},${h},${c},${ar},${g},${z},${x},${y},${q}/${imgSlug}`
+    const { w = '640',h = '360',c='fill',ar='16:9',g='center',z='1.0',x='0',y='0',q ='100',r,a } = options
+    return (r && a) ? `https://res.cloudinary.com/${org}/image/upload/w_${w},h_${h},c_${c},ar_${ar},g_${g},z_${z},x_${x},y_${y},q_${q},r_${r},a_${a}/${imgSlug}`:  r ? `https://res.cloudinary.com/${org}/image/upload/w_${w},h_${h},c_${c},ar_${ar},g_${g},z_${z},x_${x},y_${y},q_${q},r_${r}/${imgSlug}`: a ? `https://res.cloudinary.com/${org}/image/upload/w_${w},h_${h},c_${c},ar_${ar},g_${g},z_${z},x_${x},y_${y},q_${q},a_${a}/${imgSlug}`: `https://res.cloudinary.com/${org}/image/upload/w_${w},h_${h},c_${c},ar_${ar},g_${g},z_${z},x_${x},y_${y},q_${q}/${imgSlug}`
   } else {
-     return `https://res.cloudinary.com/${org}/image/upload/c_fit,g_center,w_900,q_auto:best,g_south_east,x_0/${imgSlug}`
+     return `https://res.cloudinary.com/${org}/image/upload/c_fit,g_center,w_900,q_auto:best,g_center,x_0/${imgSlug}`
     }
   }
 }
