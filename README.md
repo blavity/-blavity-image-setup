@@ -7,6 +7,13 @@
   npm install blavity/image-setup
 ```
 
+
+### Run test in browser by running `yarn visual-test`
+### Navigate to localhost:3001/
+### You should see 2 images in the window
+### Update this image by updating the environment variable in you .env file
+
+
 ```javascript
 
 /*

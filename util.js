@@ -1,3 +1,4 @@
+const config = require('dotenv').config()
 const express = require('express')
 const port = 3001
 const app = express()
@@ -8,17 +9,19 @@ const path = require('path')
 const blavityImageSetup = require('./index.js')
 const jsdom = require('jsdom')
 
+const imgSlug = config.img || 'v1571756481/f9f98ydergzgdb5odvkl'
+
 const { JSDOM } = jsdom
 /* VISUAL TEST SETUP*/
 const dom = new JSDOM(`<html><head><title>Browser Test</title></head><body><center></center></body></html>`)
 const div1 = dom.window.document.createElement('div')
 const div2 = dom.window.document.createElement('div')
 const img = dom.window.document.createElement('img')
-img.setAttribute('src', `${blavityImageSetup.setUpImage({imgSlug: 'v1571756481/f9f98ydergzgdb5odvkl', mode : 'enhance', options: {
+img.setAttribute('src', `${blavityImageSetup.setUpImage({imgSlug, mode : 'enhance', options: {
   h : '250'
 }})}`)
 const img2 = dom.window.document.createElement('img')
-img2.setAttribute('src', `${blavityImageSetup.setUpImage({imgSlug: 'v1571756481/f9f98ydergzgdb5odvkl', mode : 'custom', options: {
+img2.setAttribute('src', `${blavityImageSetup.setUpImage({imgSlug, mode : 'custom', options: {
   h : '250',
   w:'300',
   c:'crop',
