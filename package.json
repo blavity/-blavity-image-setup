@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/blavity/-blavity-image-setup/issues"
   },
-  "homepage": "https://github.com/blavity/-blavity-image-setup#readme"
+  "homepage": "https://github.com/blavity/-blavity-image-setup#readme",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "jest": "^24.9.0",
+    "jsdom": "^15.2.0"
+  }
 }
