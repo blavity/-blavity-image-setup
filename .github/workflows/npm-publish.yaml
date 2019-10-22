@@ -1,4 +1,4 @@
-name: Node.js package
+name: blavity/image-setup
 
 on:
   pull_request:
