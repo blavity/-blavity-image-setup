@@ -1,4 +1,12 @@
 # Blavity Image Setup
+```bash
+  yarn add blavity/image-setup
+
+              or
+
+  npm install blavity/image-setup
+```
+
 ```javascript
 
 /*
@@ -14,13 +22,13 @@ contains 4 functions
 
 */
 
-const {parseImage} = require('blavityImageSetup')
+const {parseImage} = require('image-setup')
 
 parseImage('https://res.cloudinary.com/blavity/image/upload/w_640,h_250,c_fill,ar_16:9,g_center,z_1.0,x_0,y_0,q_100/v1571756481/f9f98ydergzgdb5odvkl')
 
 // returns object { w: '640', h : '250', c: 'fill', ar: '16:9', g:'center', z: '1.0', x: '0', y: '0', q: '100'}
 
-const {removeEmpty} = require('blavityImageSetup')
+const {removeEmpty} = require('image-setup')
 
 // removes any key from an object that is null or undefined
 
@@ -28,7 +36,7 @@ removeEmpty({x: 1 y: null})
 
 // returns object {x:1}
 
-const {stringifyImageParams} = require('blavityImageSetup')
+const {stringifyImageParams} = require('image-setup')
 
 stringifyImageParams({
   w: 640,
@@ -58,7 +66,7 @@ stringifyImageParams({
 // a = angle Rotate or flip an image by the given degrees or automatically according to its orientation or available meta-data. Multiple modes can be applied by concatenating their names with a dot.
 
 // see cloudinary docs https://cloudinary.com/documentation/image_transformation_reference
-const {setUpImage} = require('blavityImageSetup')
+const {setUpImage} = require('image-setup')
 
 setUpImage({
   imgSlug: 'v1571756481/f9f98ydergzgdb5odvkl',
