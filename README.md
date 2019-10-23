@@ -1,10 +1,10 @@
 # Blavity Image Setup
 ```bash
-  yarn add blavity/image-setup
+  yarn add blavity/blavity-image-setup
 
               or
 
-  npm install blavity/image-setup
+  npm install blavity/blavity-image-setup
 ```
 
 
