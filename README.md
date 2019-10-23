@@ -77,20 +77,25 @@ const {setUpImage} = require('image-setup')
 
 setUpImage({
   imgSlug: 'v1571756481/f9f98ydergzgdb5odvkl',
-  mode : 'enhance',
+  mode: 'enhance',
   options: {
-  h : '250'
-}})
+    h: '250'
+  }
+})
 
-// => returns string https://res.cloudinary.com/blavity/image/upload/w_640,h_250,c_fill,ar_16:9,g_center,z_1.0,x_0,y_0,q_100/v1571756481/f9f98ydergzgdb5odvkl"
+// => returns string "https://res.cloudinary.com/blavity/image/upload/w_640,h_250,c_fill,ar_16:9,g_center,z_1.0,x_0,y_0,q_100/v1571756481/f9f98ydergzgdb5odvkl"
 
-setUpImage({imgSlug: 'v1571756481/f9f98ydergzgdb5odvkl', mode : 'custom', options: {
-  h : '250',
-  w:'300',
-  c:'crop',
-  g:'north_east'
-}})
+setUpImage({
+  imgSlug: 'v1571756481/f9f98ydergzgdb5odvkl',
+  mode: 'custom',
+  options: {
+    h : '250',
+    w:'300',
+    c:'crop',
+    g:'north_east'
+  }
+})
 
-// => returns string"https://res.cloudinary.com/blavity/image/upload/h_250,w_300,c_crop,g_north_east/v1571756481/f9f98ydergzgdb5odvkl"
+// => returns string "https://res.cloudinary.com/blavity/image/upload/h_250,w_300,c_crop,g_north_east/v1571756481/f9f98ydergzgdb5odvkl"
 
 ```

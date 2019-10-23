@@ -17,15 +17,15 @@ const dom = new JSDOM(`<html><head><title>Browser Test</title></head><body><cent
 const div1 = dom.window.document.createElement('div')
 const div2 = dom.window.document.createElement('div')
 const img = dom.window.document.createElement('img')
-img.setAttribute('src', `${blavityImageSetup.setUpImage({imgSlug, mode : 'enhance', options: {
-  h : '250'
+img.setAttribute('src', `${blavityImageSetup.setUpImage({imgSlug, mode: 'enhance', options: {
+  h: '250'
 }})}`)
 const img2 = dom.window.document.createElement('img')
-img2.setAttribute('src', `${blavityImageSetup.setUpImage({imgSlug, mode : 'custom', options: {
-  h : '250',
-  w:'300',
-  c:'crop',
-  g:'north_east'
+img2.setAttribute('src', `${blavityImageSetup.setUpImage({imgSlug, mode: 'custom', options: {
+  h: '250',
+  w: '300',
+  c: 'crop',
+  g: 'north_east'
 }})}`)
 div1.appendChild(img)
 div2.appendChild(img2)
