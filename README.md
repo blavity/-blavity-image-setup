@@ -31,7 +31,7 @@ contains 4 functions
 
 const {parseImage} = require('image-setup')
 
-parseImage('https://res.cloudinary.com/blavity/image/upload/w_640,h_250,c_fill,ar_16:9,g_center,z_1.0,x_0,y_0,q_100/v1571756481/f9f98ydergzgdb5odvkl')
+parseImage('w_640,h_250,c_fill,ar_16:9,g_center,z_1.0,x_0,y_0,q_100')
 
 // returns object { w: '640', h : '250', c: 'fill', ar: '16:9', g:'center', z: '1.0', x: '0', y: '0', q: '100'}
 
@@ -39,7 +39,7 @@ const {removeEmpty} = require('image-setup')
 
 // removes any key from an object that is null or undefined
 
-removeEmpty({x: 1 y: null})
+removeEmpty({x: 1, y: null})
 
 // returns object {x:1}
 
