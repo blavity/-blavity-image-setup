@@ -1,5 +1,5 @@
 {
-  "name": "image-setup",
+  "name": "@blavity/image-setup",
   "version": "1.0.0",
   "description": "image-setup",
   "main": "index.js",
